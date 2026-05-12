@@ -432,14 +432,29 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
     background:rgba(10,10,15,0.95); backdrop-filter:blur(20px);
     border-bottom:1px solid var(--glass-border);
   }
-  .fruits-columns { grid-template-columns:repeat(2,1fr); }
-  .team-grid { grid-template-columns:1fr; max-width:400px; margin:0 auto; }
+  .hero { padding: 100px 0 60px; text-align:center; }
+  .hero-actions { justify-content:center; }
+  .hero-stats { 
+    display:flex; flex-direction:column; gap:20px; 
+    padding:20px; width:100%; max-width:300px; margin:0 auto;
+  }
+  .stat:not(:last-child)::after {
+    right:0; top:auto; bottom:-10px; height:1px; width:100%; left:0;
+  }
+  .stat-value { justify-content:center; }
+  .fruits-columns { grid-template-columns:repeat(2,1fr); gap:12px; }
+  .fruit-column { padding:20px 12px; }
+  .fruit-emoji { font-size:2.2rem; }
+  .team-grid { grid-template-columns:1fr; max-width:320px; margin:0 auto; }
   .process-timeline { grid-template-columns:1fr; max-width:400px; margin:0 auto; }
-  .hero-stats { gap:24px; }
   .about-features { grid-template-columns:1fr; }
-  .footer-top { grid-template-columns:1fr; }
+  .footer-top { grid-template-columns:1fr; gap:32px; text-align:center; }
+  .footer-logo { justify-content:center; }
+  .social-links { justify-content:center; }
   .footer-bottom { flex-direction:column; gap:8px; text-align:center; }
   .form-group { flex-direction:column; }
   .hero-float-card { display:none; }
   .about-experience { right:10px; bottom:-10px; }
+  .testimonial-card { padding:28px 24px; }
+  .testimonial-text { font-size:1.05rem; }
 }
