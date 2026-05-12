@@ -1,0 +1,223 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  background: var(--black-deep);
+}
+
+.bgGradient {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-radial);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 500vw; /* 5 panels */
+  height: 100vh;
+}
+
+.panel {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 48px;
+  position: relative;
+}
+
+.panelContentCentered {
+  text-align: center;
+  max-width: 900px;
+}
+
+.panelContentLeft {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.word {
+  display: inline-block;
+}
+
+/* Panel 1 */
+.h2 {
+  font-size: 72px;
+  font-weight: 300;
+  color: var(--white-primary);
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.p1Sub {
+  font-size: 16px;
+  color: var(--white-secondary);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Panel 2 */
+.panelSplit {
+  display: flex;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  align-items: center;
+  gap: 80px;
+}
+
+.splitLeft {
+  flex: 1;
+}
+
+.splitRight {
+  flex: 1;
+}
+
+.h2Fade {
+  font-size: 96px;
+  font-weight: 300;
+  line-height: 1.1;
+  color: transparent;
+  background: linear-gradient(to right, transparent 50%, var(--white-tertiary) 50%);
+  background-size: 200% 100%;
+  background-position: 0% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.counterBlock {
+  max-width: 400px;
+}
+
+.counter {
+  display: block;
+  font-size: 48px;
+  color: var(--amber-primary);
+  margin-bottom: 16px;
+}
+
+.counterSub {
+  font-size: 14px;
+  color: var(--white-secondary);
+  line-height: 1.6;
+}
+
+/* Panel 3 */
+.h2Huge {
+  font-size: 120px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  margin-bottom: 32px;
+}
+
+.p3Sub {
+  font-size: 16px;
+  letter-spacing: 0.1em;
+}
+
+/* Panel 4 */
+.amberLabel {
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--amber-primary);
+  display: block;
+  margin-bottom: 40px;
+}
+
+.linesStack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.h2Stack, .h2StackAmber {
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.h2Stack {
+  color: var(--white-primary);
+}
+
+/* Panel 5 */
+.p5Wordmark {
+  font-size: 200px;
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  color: rgba(240, 237, 230, 0.8);
+  line-height: 1;
+  margin-bottom: 24px;
+  margin-right: -0.4em; /* offset tracking */
+}
+
+.p5Tagline {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: var(--white-secondary);
+}
+
+.p5Rule {
+  width: 40px;
+  height: 1px;
+  background: var(--amber-primary);
+  margin: 32px auto 0;
+  transform-origin: center;
+}
+
+/* Progress bar */
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--black-border);
+}
+
+.progressFill {
+  height: 100%;
+  width: 100%;
+  background: var(--amber-primary);
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+@media (max-width: 1024px) {
+  .h2 { font-size: 56px; }
+  .h2Fade { font-size: 72px; }
+  .h2Huge { font-size: 80px; }
+  .h2Stack, .h2StackAmber { font-size: 64px; }
+  .p5Wordmark { font-size: 120px; }
+  .panelSplit { flex-direction: column; text-align: center; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .track {
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+  }
+  .panel {
+    height: auto;
+    min-height: 100vh;
+    padding: 80px 20px;
+  }
+  .h2 { font-size: 40px; }
+  .h2Fade { font-size: 48px; }
+  .h2Huge { font-size: 56px; }
+  .h2Stack, .h2StackAmber { font-size: 48px; }
+  .p5Wordmark { font-size: 80px; }
+  .progressBar { display: none; }
+}
