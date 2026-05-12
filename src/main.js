@@ -72,7 +72,7 @@ animateCounters();
 
 // ===== Scroll Reveal =====
 const revealElements = document.querySelectorAll(
-  '.about-content, .about-image, .product-card, .process-step, .contact-content, .contact-visual, .section-header'
+  '.about-content, .about-image, .product-card, .fruit-column, .process-step, .team-card, .contact-content, .contact-visual, .section-header'
 );
 revealElements.forEach(el => el.classList.add('reveal'));
 

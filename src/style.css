@@ -202,40 +202,39 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
 .about-feature h4 { font-size:0.95rem; font-weight:600; margin-bottom:4px; }
 .about-feature p { font-size:0.8rem; color:var(--text-muted); line-height:1.5; }
 
-/* ===== Products ===== */
+/* ===== Fruit Drops ===== */
 .products { padding:120px 0; background:linear-gradient(180deg, var(--bg-dark), #0d0d18, var(--bg-dark)); }
-.products-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; }
-.product-card {
-  border-radius:var(--radius); background:var(--bg-card);
-  border:1px solid var(--glass-border); overflow:hidden;
-  transition:var(--transition); position:relative;
+.fruits-columns {
+  display:grid; grid-template-columns:repeat(8,1fr); gap:16px;
 }
-.product-card:hover { transform:translateY(-8px); border-color:rgba(255,107,43,0.3); box-shadow:0 20px 60px rgba(0,0,0,0.4); }
-.product-image { position:relative; padding:32px; background:rgba(0,0,0,0.3); overflow:hidden; }
-.product-image img { width:100%; border-radius:var(--radius-sm); transition:var(--transition); }
-.product-card:hover .product-image img { transform:scale(1.05); }
-.product-glow {
-  position:absolute; inset:0; opacity:0; transition:var(--transition);
-  filter:blur(60px);
+.fruit-column {
+  padding:28px 16px; border-radius:var(--radius);
+  background:var(--bg-card); border:1px solid var(--glass-border);
+  text-align:center; transition:var(--transition); position:relative;
+  overflow:hidden;
 }
-.product-card:hover .product-glow { opacity:0.3; }
-.orange-glow { background:radial-gradient(circle, #ff6b2b, transparent 70%); }
-.berry-glow { background:radial-gradient(circle, #e040a0, transparent 70%); }
-.mango-glow { background:radial-gradient(circle, #ffb020, transparent 70%); }
-.product-badge {
-  position:absolute; top:20px; right:20px; padding:6px 14px;
-  border-radius:50px; font-size:0.72rem; font-weight:600;
-  background:var(--primary); color:#fff; text-transform:uppercase; letter-spacing:1px;
+.fruit-column:hover {
+  transform:translateY(-8px); border-color:rgba(255,107,43,0.3);
+  box-shadow:0 20px 60px rgba(0,0,0,0.4);
 }
-.product-badge.new { background:#e040a0; }
-.product-badge.popular { background:var(--accent); color:#0a0a0f; }
-.product-info { padding:28px; }
-.product-tag { font-size:0.75rem; color:var(--primary); font-weight:600; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:8px; }
-.product-name { font-size:1.4rem; font-weight:700; margin-bottom:10px; }
-.product-desc { font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:16px; }
-.product-nutrition { display:flex; flex-wrap:wrap; gap:6px; font-size:0.75rem; color:var(--text-muted); }
-.product-footer { display:flex; justify-content:space-between; align-items:center; margin-top:20px; padding-top:20px; border-top:1px solid var(--glass-border); }
-.product-price { font-size:1.4rem; font-weight:700; color:var(--primary); }
+.fruit-emoji { font-size:2.8rem; margin-bottom:12px; }
+.fruit-num {
+  font-size:0.7rem; font-weight:700; color:var(--primary);
+  letter-spacing:2px; margin-bottom:8px; text-transform:uppercase;
+}
+.fruit-name { font-size:1.05rem; font-weight:700; margin-bottom:6px; }
+.fruit-season { font-size:0.75rem; color:var(--text-muted); margin-bottom:12px; }
+.fruit-price {
+  font-size:1.3rem; font-weight:700; color:var(--primary);
+  margin-bottom:12px;
+}
+.fruit-status {
+  font-size:0.72rem; font-weight:600; color:var(--text-muted);
+  text-transform:uppercase; letter-spacing:1px;
+}
+.fruit-status.live {
+  color:var(--accent); animation:pulse 2s infinite;
+}
 
 /* ===== Process ===== */
 .process { padding:120px 0; }
@@ -346,6 +345,39 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
   border-top:1px solid var(--glass-border); font-size:0.82rem; color:var(--text-muted);
 }
 
+/* ===== Team ===== */
+.team { padding:120px 0; }
+.team-grid {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:24px;
+}
+.team-card {
+  padding:36px 24px; border-radius:var(--radius); text-align:center;
+  background:var(--bg-card); border:1px solid var(--glass-border);
+  transition:var(--transition);
+}
+.team-card:hover {
+  transform:translateY(-5px); border-color:rgba(255,107,43,0.3);
+  box-shadow:0 15px 40px rgba(0,0,0,0.3);
+}
+.team-avatar {
+  width:64px; height:64px; border-radius:50%; margin:0 auto 16px;
+  background:var(--gradient); display:flex; align-items:center;
+  justify-content:center; font-weight:700; font-size:1.1rem; color:#fff;
+}
+.team-name { font-size:1.1rem; font-weight:700; margin-bottom:4px; }
+.team-role {
+  font-size:0.8rem; color:var(--primary); font-weight:600;
+  text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;
+}
+.team-contact {
+  display:flex; flex-direction:column; gap:8px;
+}
+.team-contact a {
+  font-size:0.78rem; color:var(--text-muted); transition:var(--transition);
+  word-break:break-all;
+}
+.team-contact a:hover { color:var(--primary); }
+
 /* ===== Back to Top ===== */
 .back-to-top {
   position:fixed; bottom:30px; right:30px; width:48px; height:48px;
@@ -373,7 +405,8 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
 /* ===== Responsive ===== */
 @media (max-width:1024px) {
   .hero-container, .about-grid, .contact-grid { grid-template-columns:1fr; gap:40px; }
-  .products-grid { grid-template-columns:repeat(2,1fr); }
+  .fruits-columns { grid-template-columns:repeat(4,1fr); }
+  .team-grid { grid-template-columns:repeat(2,1fr); }
   .process-timeline { grid-template-columns:repeat(2,1fr); }
   .timeline-line { display:none; }
   .footer-top { grid-template-columns:1fr 1fr; }
@@ -388,7 +421,8 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
     background:rgba(10,10,15,0.95); backdrop-filter:blur(20px);
     border-bottom:1px solid var(--glass-border);
   }
-  .products-grid { grid-template-columns:1fr; max-width:420px; margin:0 auto; }
+  .fruits-columns { grid-template-columns:repeat(2,1fr); }
+  .team-grid { grid-template-columns:1fr; max-width:400px; margin:0 auto; }
   .process-timeline { grid-template-columns:1fr; max-width:400px; margin:0 auto; }
   .hero-stats { gap:24px; }
   .about-features { grid-template-columns:1fr; }
