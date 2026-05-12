@@ -239,9 +239,17 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
   transform:translateY(-8px); border-color:rgba(255,107,43,0.3);
   box-shadow:0 20px 60px rgba(0,0,0,0.4);
 }
-.fruit-img { margin-bottom:12px; height:80px; display:flex; align-items:center; justify-content:center; }
-.fruit-img img { max-height:100%; object-fit:contain; transition:var(--transition); filter:drop-shadow(0 10px 15px rgba(0,0,0,0.5)); }
-.fruit-column:hover .fruit-img img { transform:scale(1.15) rotate(5deg); }
+.fruit-img { position:relative; margin-bottom:20px; height:140px; display:flex; align-items:center; justify-content:center; }
+.fruit-bottle { 
+  height:100%; object-fit:contain; filter:drop-shadow(0 10px 15px rgba(0,0,0,0.5)); 
+  transition:var(--transition); position:relative; z-index:1; mix-blend-mode: screen; 
+}
+.fruit-base { 
+  position:absolute; bottom:-10px; right:10%; height:60%; z-index:2; 
+  filter:drop-shadow(0 10px 15px rgba(0,0,0,0.6)); transition:var(--transition); 
+}
+.fruit-column:hover .fruit-bottle { transform:scale(1.1) translateY(-5px); }
+.fruit-column:hover .fruit-base { transform:scale(1.15) rotate(10deg); }
 .fruit-num {
   font-size:0.7rem; font-weight:700; color:var(--primary);
   letter-spacing:2px; margin-bottom:8px; text-transform:uppercase;
