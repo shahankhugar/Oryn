@@ -217,7 +217,9 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
   transform:translateY(-8px); border-color:rgba(255,107,43,0.3);
   box-shadow:0 20px 60px rgba(0,0,0,0.4);
 }
-.fruit-emoji { font-size:2.8rem; margin-bottom:12px; }
+.fruit-img { margin-bottom:12px; height:80px; display:flex; align-items:center; justify-content:center; }
+.fruit-img img { max-height:100%; object-fit:contain; transition:var(--transition); filter:drop-shadow(0 10px 15px rgba(0,0,0,0.5)); }
+.fruit-column:hover .fruit-img img { transform:scale(1.15) rotate(5deg); }
 .fruit-num {
   font-size:0.7rem; font-weight:700; color:var(--primary);
   letter-spacing:2px; margin-bottom:8px; text-transform:uppercase;
