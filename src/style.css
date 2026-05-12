@@ -82,6 +82,19 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
 }
 .nav-link:hover, .nav-link.active { color:var(--text); }
 .nav-link:hover::after, .nav-link.active::after { width:100%; }
+
+.nav-actions { display:flex; align-items:center; gap:20px; }
+.nav-cart {
+  position:relative; color:var(--text); transition:var(--transition);
+  display:flex; align-items:center; justify-content:center;
+}
+.nav-cart:hover { color:var(--primary); transform:translateY(-2px); }
+.cart-badge {
+  position:absolute; top:-6px; right:-8px; background:var(--primary);
+  color:#fff; font-size:0.65rem; font-weight:700; width:18px; height:18px;
+  border-radius:50%; display:flex; align-items:center; justify-content:center;
+}
+
 .nav-cta {
   padding:10px 24px; border-radius:50px; font-weight:600;
   font-size:0.85rem; background:var(--gradient); color:#fff;
@@ -241,10 +254,13 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
 }
 .fruit-status {
   font-size:0.72rem; font-weight:600; color:var(--text-muted);
-  text-transform:uppercase; letter-spacing:1px;
+  text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;
 }
 .fruit-status.live {
   color:var(--accent); animation:pulse 2s infinite;
+}
+.add-to-cart-btn {
+  width:100%; padding:10px; font-size:0.85rem; justify-content:center;
 }
 
 /* ===== Process ===== */
@@ -426,6 +442,7 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; }
 @media (max-width:768px) {
   .nav-links, .nav-cta { display:none; }
   .mobile-toggle { display:flex; }
+  .nav-actions { gap:16px; margin-right:16px; margin-left:auto; }
   .nav-links.open {
     display:flex; flex-direction:column; position:absolute;
     top:100%; left:0; width:100%; padding:24px 32px;

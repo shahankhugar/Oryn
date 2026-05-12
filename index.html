@@ -26,7 +26,13 @@
           <li><a href="#testimonials" class="nav-link" data-section="testimonials">Reviews</a></li>
           <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
         </ul>
-        <button class="nav-cta" id="nav-cta">Order Now</button>
+        <div class="nav-actions">
+          <a href="/cart.html" class="nav-cart" id="nav-cart" aria-label="View Cart">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="cart-badge" id="cart-badge">0</span>
+          </a>
+          <button class="nav-cta" id="nav-cta">Order Now</button>
+        </div>
         <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
           <span></span>
           <span></span>
@@ -178,6 +184,7 @@
             <div class="fruit-season">May – Jun</div>
             <div class="fruit-price">₹249</div>
             <div class="fruit-status live">● Live Now</div>
+            <button class="btn btn-primary btn-small add-to-cart-btn" data-id="mango" data-name="Mango" data-price="249" data-img="/fruit-mango.png">Add to Cart</button>
           </div>
           <!-- Fruit 2 -->
           <div class="fruit-column" id="fruit-watermelon">
@@ -406,10 +413,10 @@
                 </div>
               </div>
               <div class="contact-item" id="contact-phone">
-                <span class="contact-icon">📞</span>
+                <span class="contact-icon">💬</span>
                 <div>
-                  <span class="contact-label">Call Us</span>
-                  <a href="tel:+918073644604">+91 8073644604</a>
+                  <span class="contact-label">Chat with Us</span>
+                  <a href="https://wa.me/918073644604" target="_blank" rel="noopener noreferrer">WhatsApp Support</a>
                 </div>
               </div>
               <div class="contact-item" id="contact-location">
@@ -426,7 +433,7 @@
               <div class="contact-card-icon">🍊</div>
               <h3>Order Custom Packs</h3>
               <p>Create your own juice box with your favorite flavors. Perfect for gifting or weekly subscription.</p>
-              <a href="#" class="btn btn-outline btn-white" id="custom-pack-btn">Build Your Pack</a>
+              <a href="https://wa.me/918073644604?text=Hi,%20I%20want%20to%20order%20a%20custom%20pack!" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-white" id="custom-pack-btn">Build Your Pack</a>
             </div>
           </div>
         </div>

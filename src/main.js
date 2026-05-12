@@ -156,3 +156,54 @@ if (particlesContainer) {
     particlesContainer.appendChild(particle);
   }
 }
+
+// ===== Cart Logic =====
+const cartBadge = document.getElementById('cart-badge');
+const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
+
+function updateCartBadge() {
+  const cart = JSON.parse(localStorage.getItem('oryn_cart') || '[]');
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  if (cartBadge) {
+    cartBadge.textContent = totalItems;
+    cartBadge.style.display = totalItems > 0 ? 'flex' : 'none';
+  }
+}
+
+addToCartBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = {
+      id: btn.dataset.id,
+      name: btn.dataset.name,
+      price: parseInt(btn.dataset.price),
+      img: btn.dataset.img,
+      quantity: 1
+    };
+    
+    let cart = JSON.parse(localStorage.getItem('oryn_cart') || '[]');
+    const existing = cart.find(i => i.id === item.id);
+    
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push(item);
+    }
+    
+    localStorage.setItem('oryn_cart', JSON.stringify(cart));
+    updateCartBadge();
+    
+    // Feedback
+    const originalText = btn.textContent;
+    btn.textContent = 'Added ✓';
+    btn.style.background = '#2dd4a8';
+    btn.style.color = '#fff';
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 2000);
+  });
+});
+
+// Init badge
+updateCartBadge();

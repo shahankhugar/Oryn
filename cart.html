@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Cart | Oryn - Premium Cold-Pressed Juice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/cart.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="/" class="logo">
+          <span class="logo-text">ORYN</span>
+          <span class="logo-dot">.</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/#process" class="nav-link">Our Process</a></li>
+          <li><a href="/#drops" class="nav-link">Seasonal Drops</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="/cart.html" class="nav-cart" id="nav-cart" aria-label="View Cart">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="cart-badge" id="cart-badge">0</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Cart Header -->
+    <section class="cart-header">
+      <div class="container">
+        <h1>Your Cart</h1>
+      </div>
+    </section>
+
+    <!-- Cart Layout -->
+    <section class="cart-section">
+      <div class="container cart-layout">
+        <div class="cart-items" id="cart-items">
+          <!-- Items injected via JS -->
+          <div class="empty-cart-msg" id="empty-cart-msg">
+            <h2>Your cart is empty</h2>
+            <p>Looks like you haven't added any fresh juices yet.</p>
+            <a href="/#drops" class="btn btn-primary">Browse Seasonal Drops</a>
+          </div>
+        </div>
+        
+        <div class="cart-summary glass" id="cart-summary" style="display: none;">
+          <h3>Order Summary</h3>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="subtotal">₹0</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span>Free</span>
+          </div>
+          <div class="summary-divider"></div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="total">₹0</span>
+          </div>
+          
+          <div class="payment-section">
+            <h4>Payment Method: UPI</h4>
+            <div class="upi-box">
+              <p>Scan to Pay or Click below</p>
+              <div class="upi-id">UPI ID: 8073644604@ybl</div>
+              <img id="upi-qr" src="" alt="UPI QR Code" />
+            </div>
+            
+            <a href="#" id="pay-now-btn" class="btn btn-primary" style="width:100%; margin-bottom: 12px;">Pay Now via App</a>
+            <a href="#" id="confirm-whatsapp-btn" class="btn btn-outline btn-white" style="width:100%;">I've Paid - Confirm on WhatsApp</a>
+            <p class="payment-note">After paying, please confirm your order via WhatsApp with a screenshot of the payment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer (Simplified) -->
+    <footer class="footer" style="margin-top:auto;">
+      <div class="container">
+        <div class="footer-bottom">
+          <p>&copy; 2026 Oryn. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/cart.js"></script>
+  </body>
+</html>
